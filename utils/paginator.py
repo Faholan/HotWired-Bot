@@ -108,19 +108,7 @@ class Paginator:
         """
     Sends a paginator and processes it according to the reactions passed by the author.
 
-    Parameters
-    -----------
-    timeout: Union[int, float]
-        Timeout for the paginator to exit.
-        If reached, it tells the paginator to exit and clear all the reactions.
-        Defaults to 300.0s (5 minutes)
-    kwargs: Union[str, discord.Emoji]
-        Key-Word arguments to override default reaction emojis
-        Can be used like so:
-
-        `
-        await Paginator().send(timeout=400.0, first_page_emoji='👆', next_page_emoji='✌️')
-        `
+  
         """
 
         ctx: Context = self.ctx

@@ -24,17 +24,7 @@ class Paginator:
 
     
 
-        `
-            Pages = Paginator()
-            Pages.embed = discord.Embed(
-                title='Example',
-                color='discord.Color.blurple()'
-            )
-        `
-    Raises
-    -----------
-    CannotPaginate: Exception
-        Raised when the bot lacks a permission/condition to display/process the paginator
+     
     """
 
     def __init__(self, ctx: commands.Context, entries: t.List[str], max_size: int = 500, show_page_length: bool = True,) -> None:

@@ -4,7 +4,6 @@ from discord.ext.commands import Paginator as BasePaginator
 from discord.ext import commands
 import typing as t
 from discord.ext.commands import Bot, Context
-from discord.ext import menus
 
 
 class CannotPaginate(Exception):
@@ -105,9 +104,7 @@ class Paginator:
         for entry in entries:
             paginator.add_line(entry)
 
-    async def send(
-        self, timeout: t.Union[int, float] = 300.0, **kwargs: t.Union[str, discord.Emoji],
-    ):
+    async def send(self, timeout: t.Union[int, float] = 300.0, **kwargs: t.Union[str, discord.Emoji],) -> None:
         """
     Sends a paginator and processes it according to the reactions passed by the author.
 
@@ -127,7 +124,6 @@ class Paginator:
         """
 
         ctx: Context = self.ctx
-        bot: Bot = ctx.bot
         page = self.page
         embed = self.embed
         paginator = self.paginator
@@ -157,13 +153,13 @@ class Paginator:
             await message.add_reaction(value)
 
         # Reaction checker
-        def check(reaction: discord.Reaction, user: t.Union[discord.Member, discord.User]):
+        def check(reaction: discord.Reaction, user: t.Union[discord.Member, discord.User]) -> bool:
             return all(
                 (
                     reaction.message.id == message.id,  # The reaction was made on the initial message
                     str(reaction.emoji) in reaction_emojis.values(),  # Reaction emoji is one of the emojis inside of reaction_emojis
                     user.id != ctx.bot.user.id,  # User is not this bot
-                    user.bot == False,  # User is not a bot
+                    user.bot is False,  # User is not a bot
                     user.id == ctx.author.id,  # User is the command invoker, we don't want random people to scroll the pages for us.
                 )
             )

@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignore intellij Files
 .idea
+
+# Ignore .venv and venv files inside of the cwd
+*venv

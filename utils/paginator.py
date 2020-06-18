@@ -22,30 +22,7 @@ class Paginator:
     If the user does not reply within 2 minutes then the pagination
     interface exits automatically.
 
-    Parameters
-    -----------
-    ctx: Context
-        The context of the command.
-    entries: List[str]
-        A list of entries to paginate.
-    max_size: int
-        Characters per entry
-        Will raise a runtime error from discord if an entry's
-        length exceeds this parameter.
-        Defaults to 500
-    show_entry_count: bool
-        Whether to show an entry count in the footer.
-    Attributes
-    -----------
-    paginator: commands.Paginator
-        A static paginator which is pre-configured with the entries passed.
-        It is not recommended to manually process this paginator unless if
-        necessary, use instance.send() instead.
-    embed: discord.Embed
-        Use this to change embed attributes such as color, title etc
-        Do note that things like footer (depending on the show_entry_count parameter) and description
-        will be overridden if specified.
-        Use it like so:
+    
 
         `
             Pages = Paginator()

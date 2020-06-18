@@ -58,7 +58,7 @@ class Paginator:
             Bot lacks a mandatory permission to paginate:\n\t
             Permission: {permission}\n\t
             Server: {self.guild.name} ({self.guild.id})\n\t
-            Command & Author: {ctx.command.name} ({ctx.author.id}) & {ctx.author.name}
+            Command **{ctx.command.name}** invoked by {ctx.author.name} ({ctx.author.id})
             """
                 )
 

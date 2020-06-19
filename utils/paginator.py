@@ -46,13 +46,14 @@ class Paginator:
 
         for permission in mandatory_permissions:
             if not permission:
-                raise CannotPaginate(
+                raise CannotPaginate(textwrap.dedent(
                     f"""
-            Bot lacks a mandatory permission to paginate:\n\t
-            Permission: {permission}\n\t
-            Server: {self.guild.name} ({self.guild.id})\n\t
-            Command **{ctx.command.name}** invoked by {ctx.author.name} ({ctx.author.id})
-            """
+                    Bot lacks a mandatory permission to paginate:\n\t
+                    Permission: {permission}\n\t
+                    Server: {self.guild.name} ({self.guild.id})\n\t
+                    Command **{ctx.command.name}** invoked by {ctx.author.name} ({ctx.author.id})
+                    """
+                    )
                 )
 
         self.page = 0

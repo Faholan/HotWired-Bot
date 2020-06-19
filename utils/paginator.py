@@ -1,9 +1,10 @@
 import asyncio
-import discord
-from discord.ext.commands import Paginator as BasePaginator
-from discord.ext import commands
 import typing as t
+
+import discord
+from discord.ext import commands
 from discord.ext.commands import Bot, Context
+from discord.ext.commands import Paginator as BasePaginator
 
 
 class CannotPaginate(Exception):

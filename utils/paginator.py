@@ -7,9 +7,7 @@ from discord.ext.commands import Bot, Context
 
 
 class CannotPaginate(Exception):
-    """
-    Base Exception Class for Custom error 'Cannot Paginate'
-    """
+    """Base Exception Class for Custom error 'Cannot Paginate'."""
 
     pass
 

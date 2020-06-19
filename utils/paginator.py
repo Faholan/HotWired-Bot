@@ -18,10 +18,6 @@ class Paginator:
     Pages are 1-index based, not 0-index based.
     If the user does not reply within 2 minutes then the pagination
     interface exits automatically.
-
-    
-
-     
     """
 
     def __init__(self, ctx: commands.Context, entries: t.List[str], max_size: int = 500, show_page_length: bool = True,) -> None:

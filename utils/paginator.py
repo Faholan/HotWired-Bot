@@ -113,7 +113,6 @@ class Paginator:
                 (
                     reaction.message.id == message.id,  # The reaction was made on the initial message
                     str(reaction.emoji) in reaction_emojis.values(),  # Reaction emoji is one of the emojis inside of reaction_emojis
-                    user.id != ctx.bot.user.id,  # User is not this bot
                     user.bot is False,  # User is not a bot
                     user.id == ctx.author.id,  # User is the command invoker, we don't want random people to scroll the pages for us.
                 )

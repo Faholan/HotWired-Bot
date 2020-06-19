@@ -72,11 +72,7 @@ class Paginator:
             paginator.add_line(entry)
 
     async def send(self, timeout: t.Union[int, float] = 300.0, **kwargs: t.Union[str, discord.Emoji],) -> None:
-        """
-    Sends a paginator and processes it according to the reactions passed by the author.
-
-  
-        """
+        """Sends a paginator and processes it according to the reactions passed by the author."""
 
         ctx: Context = self.ctx
         page = self.page

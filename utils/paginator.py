@@ -36,7 +36,7 @@ class Paginator:
         self.show_page_length = show_page_length
 
         # Checking permissions, will raise CannotPaginate if missing a permission
-        if ctx.guild is not None:
+        if ctx.guild:
             self.permissions = ctx.channel.permissions_for(ctx.guild.me)
         else:
             self.permissions = ctx.channel.permissions_for(ctx.bot.user)
